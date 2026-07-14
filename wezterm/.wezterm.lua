@@ -5,6 +5,7 @@ local config = {}
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
+
 local seen_windows = {}
 
 wezterm.on("window-focus-changed", function(window, pane)
@@ -26,7 +27,7 @@ config.check_for_updates = false
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = false
 config.font_size = 10
-config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
+config.font = wezterm.font("JetBrains Mono", { weight = "Regular" })
 --config.font = wezterm.font("Consolas", { weight = "Bold" })
 config.enable_tab_bar = false
 config.window_padding = {
@@ -48,7 +49,7 @@ config.window_background_image_hsb = {
 	hue = 1.0,
 	saturation = 1.0,
 }
-config.front_end = "OpenGL"
+config.front_end = "WebGpu"
 config.keys = {
 	{ key = "Enter", mods = "CTRL", action = wezterm.action({ SendString = "\x1b[13;5u" }) },
 	{ key = "Enter", mods = "SHIFT", action = wezterm.action({ SendString = "\x1b[13;2u" }) },
