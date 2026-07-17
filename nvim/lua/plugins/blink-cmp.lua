@@ -30,7 +30,7 @@ return {
 		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		-- keymap = { preset = "default" },
-		keymap = { preset = "enter", ["<CR>"] = { "select_and_accept", "fallback" } },
+		-- keymap = { preset = "enter", ["<CR>"] = { "select_and_accept", "fallback" } },
 
 		-- (Default) Only show the documentation popup when manually triggered
 		completion = { documentation = { auto_show = true } },

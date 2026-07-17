@@ -2,7 +2,10 @@ return {
 	"stevearc/oil.nvim",
 	---@module 'oil'
 	---@type oil.SetupOpts
-	opts = {},
+	opts = {
+		view_options = { show_hidden = true },
+	},
+
 	-- Optional dependencies
 	dependencies = { { "nvim-mini/mini.icons", opts = {} } },
 	-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
@@ -12,6 +15,7 @@ return {
 		require("oil").setup({
 			-- Syncs oil's floating window size and border with your fzf-lua config
 			float = {
+
 				win_options = { winblend = 100, winhighlight = "NormalFloat:Normal,FloatBorder:Normal" },
 			},
 		})

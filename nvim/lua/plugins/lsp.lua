@@ -163,7 +163,10 @@ return {
 				end,
 			},
 			vim.api.nvim_set_hl(0, "LspInlayHint", {
-				fg = "#5c6370", -- Text color (e.g., muted gray)
+				-- fg = "#5c6370", -- Text color (e.g., muted gray)
+
+				fg = "#757D53", -- Text color (e.g., muted gray)
+
 				-- bg = "#2c313c", -- Subtle background block color
 				bg = "NONE", -- Subtle background block color
 				italic = true, -- Make the text italic
