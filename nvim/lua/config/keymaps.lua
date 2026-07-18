@@ -98,7 +98,7 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Oil
-vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", { desc = "" })
+-- vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", { desc = "" })
 
 -- Toggle soft wrap and word wrapping together
 vim.keymap.set("n", "<leader>z", function()
@@ -145,8 +145,6 @@ end, { desc = "Format current file" })
 -- Change directory to the active file's folder by pressing <Leader>cd
 vim.keymap.set("n", "<leader>cd", "<cmd>cd %:p:h<cr><cmd>pwd<cr>", { desc = "Change directory to current file" })
 
--- vim.keymap.set("n", "<leader>s", "<cmd>LspClangdSwitchSourceHeader<cr>", { desc = "Switch between Header/Source" })
---
 vim.keymap.set("n", "<leader>sh", function()
 	vim.lsp.buf_request(0, "textDocument/switchSourceHeader", { uri = vim.uri_from_bufnr(0) }, function(err, result)
 		if not result then

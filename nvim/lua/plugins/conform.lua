@@ -10,6 +10,8 @@ return {
 			-- Conform will run the first available formatter
 			c = { "clang_format" },
 			cpp = { "clang_format" },
+			cmake = { "gersemi" },
+			-- cmake = { "cmake_format" },
 		},
 		format_on_save = {
 			-- These options will be passed to conform.format()

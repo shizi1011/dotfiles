@@ -78,5 +78,11 @@ vim.opt.formatoptions:remove({ "c", "r", "o" }) -- don't insert the current comm
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
 vim.opt.autochdir = false
 vim.opt.whichwrap:remove("s")
+vim.o.autoread = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.lsp.foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+
 -- vim.opt.list = true
 -- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }

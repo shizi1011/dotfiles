@@ -21,11 +21,11 @@ return {
 			desc = "Find by grepping in project directory",
 		},
 		{
-			"<leader>fgc",
+			"<leader>fv",
 			function()
 				require("fzf-lua").live_grep({ cwd = vim.fn.stdpath("config") })
 			end,
-			desc = "Find by grepping in project directory",
+			desc = "Find by grepping in neovim configuration",
 		},
 		{
 			"<leader>fc",
@@ -48,13 +48,22 @@ return {
 			end,
 			desc = "[F]ind [K]eymaps",
 		},
-		-- {
-		-- 	"<leader>fb",
-		-- 	function()
-		-- 		require("fzf-lua").builtin()
-		-- 	end,
-		-- 	desc = "[F]ind [B]uiltin FZF",
-		-- },
+		{
+			"<leader>fs",
+			function()
+				require("fzf-lua").lsp_live_workspace_symbols()
+			end,
+			desc = "Find LSP Workspace Symbols",
+		},
+
+		-- Map to fuzzy find symbols across the entire project
+		{
+			"<leader>fb",
+			function()
+				require("fzf-lua").builtin()
+			end,
+			desc = "[F]ind [B]uiltin FZF",
+		},
 		{
 			"<leader>fw",
 			function()

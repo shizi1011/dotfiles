@@ -14,17 +14,26 @@ return {
 	config = function()
 		require("oil").setup({
 			-- Syncs oil's floating window size and border with your fzf-lua config
-			float = {
-
-				win_options = { winblend = 100, winhighlight = "NormalFloat:Normal,FloatBorder:Normal" },
-			},
+			-- float = {
+			--
+			-- 	win_options = { winblend = 100, winhighlight = "NormalFloat:Normal,FloatBorder:Normal" },
+			-- },
 		})
-		require("transparent").setup({
-			extra_groups = {
-				"NormalFloat",
-				"FloatBorder",
-			},
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "OilEnter",
+			callback = vim.schedule_wrap(function(args)
+				local oil = require("oil")
+				if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
+					oil.open_preview()
+				end
+			end),
 		})
+		-- require("transparent").setup({
+		-- 	extra_groups = {
+		-- 		"NormalFloat",
+		-- 		"FloatBorder",
+		-- 	},
+		-- })
 	end,
 	-- config = function()
 	-- 	require("oil").setup({

@@ -22,6 +22,9 @@ vim.opt.rtp:prepend(lazypath)
 --vim.g.maplocalleader = " "
 vim.cmd("autocmd FileType * setlocal formatoptions-=o formatoptions-=r")
 vim.cmd([[highlight Cursor guifg=red guibg=red]])
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+	command = "checktime",
+})
 
 -- Setup lazy.nvim
 require("lazy").setup({
